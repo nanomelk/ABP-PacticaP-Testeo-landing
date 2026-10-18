@@ -91,7 +91,7 @@ dialog::backdrop{background:rgba(2,6,23,.8)}
     <tbody>
      <tr class="border-t bd"><td class="p-3 font-semibold">Infraestructura</td><td class="p-3 muted">Scripts locales</td><td class="p-3"><span class="badge g">Vercel + Render</span> Arquitectura Cloud desacoplada</td></tr>
      <tr class="border-t bd"><td class="p-3 font-semibold">Control de plazos</td><td class="p-3 muted">Google Calendar</td><td class="p-3"><span class="badge g">Semáforo algorítmico</span> integrado</td></tr>
-     <tr class="border-t bd"><td class="p-3 font-semibold">Comunicación</td><td class="p-3 muted">WhatsApp manual</td><td class="p-3"><span class="badge g">Telegram + n8n + Ollama + MongoDB Atlas</span></td></tr>
+     <tr class="border-t bd"><td class="p-3 font-semibold">Comunicación</td><td class="p-3 muted">Telegram manual</td><td class="p-3"><span class="badge g">Telegram + n8n + Ollama + MongoDB Atlas</span></td></tr>
     </tbody>
    </table>
   </div>
@@ -186,7 +186,7 @@ dialog::backdrop{background:rgba(2,6,23,.8)}
 
 <script>
 const D={
- "Problemática":"<p>Gestión analógica y fragmentada de expedientes en cuadernos y WhatsApp en estudios jurídicos boutique.</p><p class='mt-2'>Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias comerciales (Pain Points PP1 a PP5).</p>",
+ "Problemática":"<p>Gestión analógica y fragmentada de expedientes en cuadernos y Telegram en estudios jurídicos boutique.</p><p class='mt-2'>Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias comerciales (Pain Points PP1 a PP5).</p>",
  "Objetivos":"<p><b>General:</b> desarrollar una plataforma Web SaaS de costo cero para digitalizar la ingesta de casos, prevenir vencimientos con un semáforo y gestionar el historial con un asistente de IA.</p><ol class='list-decimal pl-5 mt-2 space-y-1'><li>Digitalizar la ingesta en una SPA (React) conectada a una API (FastAPI).</li><li>Implementar el semáforo determinista (≤3d rojo, 4–7d amarillo, &gt;7d verde).</li><li>Integrar un asistente en Telegram con n8n, Ollama y MongoDB.</li><li>Ejecutar pruebas funcionales, de integración y usabilidad.</li></ol>",
  "Fundamentación":"<p>Es posible modernizar la gestión judicial de un estudio boutique sin costos de licencias ni infraestructura paga, usando capas gratuitas en la nube (Vercel, Render), Google Sheets como almacenamiento inicial y modelos de IA de código abierto.</p><p class='mt-2'>Elimina el riesgo de mala praxis por caducidad, estandariza la entrada de datos y preserva la privacidad de la información legal.</p>",
  "Producto final":"<p>Plataforma Web Cloud «LexTrack» en producción: SPA React (Vercel), API REST FastAPI (Render) y bot de Telegram con n8n + Ollama.</p><p class='mt-2'>Se validó el recorrido formulario → API → visualización, con costo cero de infraestructura.</p>",
@@ -205,7 +205,7 @@ sel('Problemática');
 // Poster (misma plantilla en tarjeta y modal)
 function build(wrap){
  const p=$('#poster-tpl').content.firstElementChild.cloneNode(true);
- p.querySelector('[data-f=prob]').textContent="Gestión analógica y fragmentada de expedientes procesales en cuadernos y WhatsApp. Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias (PP1 a PP5).";
+ p.querySelector('[data-f=prob]').textContent="Gestión analógica y fragmentada de expedientes procesales en cuadernos y Telegram. Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias (PP1 a PP5).";
  p.querySelector('[data-f=og]').textContent="Plataforma Web SaaS de costo cero para digitalizar la ingesta, prevenir vencimientos con un semáforo y gestionar el historial con un asistente de IA.";
  p.querySelector('[data-f=oe]').innerHTML="<li>SPA React + API FastAPI</li><li>Semáforo (≤3d rojo, 4-7d amarillo, &gt;7d verde)</li><li>Asistente Telegram + n8n + Ollama + MongoDB</li><li>Pruebas funcionales, integración y usabilidad</li>";
  p.querySelector('[data-f=fund]').textContent="Es posible modernizar la gestión judicial de un estudio boutique sin licencias ni infraestructura paga, con capas gratuitas en la nube (Vercel, Render), Google Sheets y modelos de IA de código abierto, eliminando el riesgo de caducidad y preservando la privacidad.";
