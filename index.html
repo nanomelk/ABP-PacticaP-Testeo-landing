@@ -192,7 +192,7 @@ const D={
  "Producto final":"<p>Plataforma Web Cloud «LexTrack» en producción: SPA React (Vercel), API REST FastAPI (Render) y bot de Telegram con n8n + Ollama.</p><p class='mt-2'>Se validó el recorrido formulario → API → visualización, con costo cero de infraestructura.</p>",
  "Integrantes":"<ul class='space-y-1'><li>Melchiorre, Mariano Sebastián</li><li>Lagger, Luis Alberto</li><li>Issetta, Rocío Belén</li><li>Roqué, Martín Miguel</li><li>Heredia, Joel Augusto</li></ul><p class='mt-3 muted'>Docentes: Dianela Accietto / Carolina Ahumada · Grupo 10</p>"};
 const $=s=>document.querySelector(s);
-const TELEGRAM_URL=""; // pegar aquí el enlace del bot (https://t.me/...)
+const TELEGRAM_URL="https://t.me/LextrackISPCBot";
 const tg=$('#tg');
 if(TELEGRAM_URL){tg.href=TELEGRAM_URL}else{tg.addEventListener('click',e=>{e.preventDefault();const t=$('#toast');t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2500)})}
 
