@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LexTrack — LegalTech & IA | ISPC</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--head:#1e3a8a;--soft:#eff6ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0b1220;--surface:#111b2e;--text:#e2e8f0;--muted:#94a3b8;--border:#24324d;--head:#93c5fd;--soft:#14233f}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0b1220;--surface:#111b2e;--text:#e2e8f0;--muted:#94a3b8;--border:#24324d;--head:#93c5fd;--soft:#14233f}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Inter,"Segoe UI",Roboto,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:1rem}
+.soft{background:var(--soft)}.muted{color:var(--muted)}.head{color:var(--head)}.bd{border-color:var(--border)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:.75rem;font-weight:600;transition:.2s;font-size:.95rem}
+.btn:hover{transform:translateY(-2px)}
+.badge{display:inline-block;padding:.2rem .65rem;border-radius:999px;font-size:.75rem;font-weight:700}
+.g{background:#dcfce7;color:#166534}.y{background:#fef9c3;color:#854d0e}.r{background:#fee2e2;color:#991b1b}
+.tab[aria-selected="true"]{background:#0284c7;color:#fff;border-color:#0284c7}
+.tab{border:1px solid var(--border);border-radius:.6rem;padding:.45rem .9rem;font-size:.875rem;font-weight:600}
+#poster-wrap{overflow:hidden;position:relative}
+.poster{width:1000px;transform-origin:top left;background:#fff;color:#334155;font-family:"Segoe UI",sans-serif;position:absolute;top:0;left:0}
+.poster *{color-scheme:light}
+.ph{background:linear-gradient(135deg,#00a8e8,#0097d4);color:#fff;padding:28px 36px}
+.ph h1{font-size:30px;font-weight:800;text-transform:uppercase;line-height:1.15;color:#fff}
+.ph p{font-size:15px;margin-top:6px;color:#e0f2fe}
+.pg{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:16px;padding:24px 28px 0}
+.pb{border:2px solid #00a8e8;border-radius:12px;padding:14px;font-size:12.5px;line-height:1.5;margin-bottom:0;background:#fff}
+.pb b.l{display:block;color:#00a8e8;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.pb ul{padding-left:16px;list-style:disc}
+.pcol{display:flex;flex-direction:column;gap:12px}
+.pw{padding:16px 28px 0}.pf{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 28px 24px;font-size:12px}
+dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh}
+dialog::backdrop{background:rgba(2,6,23,.8)}
+</style>
+</head>
+<body>
+<header class="bg-[#1e3a8a] text-white">
+ <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+  <a href="#inicio" class="font-extrabold text-xl tracking-tight">⚖️ Lex<span class="text-sky-300">Track</span></a>
+  <div class="hidden md:flex gap-6 text-sm text-blue-100">
+   <a href="#poster" class="hover:text-white">Póster</a><a href="#arquitectura" class="hover:text-white">Arquitectura</a><a href="#testing" class="hover:text-white">Testing</a><a href="#equipo" class="hover:text-white">Equipo</a>
+  </div>
+ </nav>
+</header>
+
+<section id="inicio" class="bg-gradient-to-br from-[#1e3a8a] via-[#1e40af] to-[#0284c7] text-white">
+ <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 text-center">
+  <span class="badge bg-white/15 text-white mb-5">LegalTech & IA · ISPC 2026</span>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-4xl mx-auto">LexTrack — Sistema de Ingesta, Gestión Jurídica y Prevención de Caducidades</h1>
+  <p class="mt-5 text-lg text-blue-100 max-w-2xl mx-auto">Plataforma Web SaaS de costo cero con Inteligencia Artificial para la modernización de estudios jurídicos.</p>
+  <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+   <a class="btn bg-white text-[#1e3a8a] shadow-lg" href="https://lextrack-front.vercel.app/" target="_blank" rel="noopener">🌐 Probar Frontend Web</a>
+   <a class="btn bg-sky-500 text-white shadow-lg" href="https://lextrack-back-9ew1.onrender.com/docs" target="_blank" rel="noopener">📘 Ver Documentación API Docs</a>
+   <a id="tg" class="btn border border-white/60 text-white" href="#" target="_blank" rel="noopener">✈️ Probar Bot de Telegram</a>
+  </div>
+  <div class="mt-10 flex flex-wrap justify-center gap-2 text-xs">
+   <span class="badge g">● Plazo &gt; 7 días</span><span class="badge y">● 4–7 días</span><span class="badge r">● ≤ 3 días</span>
+  </div>
+ </div>
+</section>
+
+<main>
+<section id="poster" class="max-w-6xl mx-auto px-4 py-16">
+ <h2 class="text-2xl md:text-3xl font-bold head">Póster académico</h2>
+ <p class="muted mt-2">Práctica Profesionalizante I + Testeo de Software · Proyecto Integrador ABP (MVP Beta)</p>
+ <div class="mt-8 grid lg:grid-cols-2 gap-8 items-start">
+  <div class="card p-4">
+   <div id="poster-wrap" class="rounded-lg border bd" aria-label="Vista previa del póster"></div>
+   <div class="mt-4 flex flex-wrap gap-3">
+    <button id="open-modal" class="btn bg-[#0284c7] text-white">🔍 Ver póster en pantalla completa</button>
+    <button id="print-poster" class="btn border bd head">🖨️ Imprimir / guardar PDF</button>
+   </div>
+  </div>
+  <div class="card p-5">
+   <div role="tablist" id="tabs" class="flex flex-wrap gap-2 mb-4" aria-label="Resumen del póster"></div>
+   <div id="panel" role="tabpanel" class="text-sm leading-relaxed min-h-[220px]"></div>
+  </div>
+ </div>
+</section>
+
+<section id="arquitectura" class="soft">
+ <div class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-bold head">Arquitectura Cloud y evolución</h2>
+  <p class="muted mt-2">Comparativa entre la Evidencia 1 (prototipo local) y la Evidencia 3 (MVP en la nube).</p>
+  <div class="card mt-8 overflow-x-auto">
+   <table class="w-full text-sm text-left min-w-[560px]">
+    <thead><tr class="bg-[#1e3a8a] text-white"><th class="p-3">Componente</th><th class="p-3">Evidencia 1</th><th class="p-3">Evidencia 3</th></tr></thead>
+    <tbody>
+     <tr class="border-t bd"><td class="p-3 font-semibold">Infraestructura</td><td class="p-3 muted">Scripts locales</td><td class="p-3"><span class="badge g">Vercel + Render</span> Arquitectura Cloud desacoplada</td></tr>
+     <tr class="border-t bd"><td class="p-3 font-semibold">Control de plazos</td><td class="p-3 muted">Google Calendar</td><td class="p-3"><span class="badge g">Semáforo algorítmico</span> integrado</td></tr>
+     <tr class="border-t bd"><td class="p-3 font-semibold">Comunicación</td><td class="p-3 muted">WhatsApp manual</td><td class="p-3"><span class="badge g">Telegram + n8n + Ollama + MongoDB Atlas</span></td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div class="card mt-8 p-4">
+   <h3 class="font-semibold head mb-3">Diagrama de arquitectura</h3>
+   <svg viewBox="0 0 800 330" class="w-full h-auto" role="img" aria-label="Diagrama de arquitectura de LexTrack" font-family="Inter,Segoe UI,sans-serif" font-size="13">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0284c7"/></marker></defs>
+    <g stroke="#0284c7" stroke-width="2" fill="none" marker-end="url(#ar)">
+     <path d="M170 70H260"/><path d="M400 70H490"/><path d="M630 70H660"/><path d="M330 100V150" stroke-dasharray="0"/><path d="M330 220V250"/>
+     <path d="M170 280H260"/><path d="M400 280H490"/>
+    </g>
+    <g fill="#1e3a8a"><rect x="30" y="35" width="140" height="70" rx="12"/><rect x="260" y="35" width="140" height="70" rx="12"/><rect x="490" y="35" width="140" height="70" rx="12" fill="#0284c7"/><rect x="660" y="35" width="120" height="70" rx="12" fill="#0284c7"/>
+     <rect x="260" y="150" width="140" height="70" rx="12" fill="#0369a1"/><rect x="30" y="245" width="140" height="70" rx="12" fill="#0369a1"/><rect x="260" y="245" width="140" height="70" rx="12" fill="#0369a1"/><rect x="490" y="245" width="140" height="70" rx="12" fill="#0369a1"/></g>
+    <g fill="#fff" text-anchor="middle" font-weight="600">
+     <text x="100" y="66">Usuario</text><text x="100" y="86" font-size="11" font-weight="400">Abogado / estudio</text>
+     <text x="330" y="66">Frontend React</text><text x="330" y="86" font-size="11" font-weight="400">SPA · Vercel</text>
+     <text x="560" y="66">API FastAPI</text><text x="560" y="86" font-size="11" font-weight="400">REST · Render</text>
+     <text x="720" y="66">Google Sheets</text><text x="720" y="86" font-size="11" font-weight="400">Persistencia inicial</text>
+     <text x="330" y="181">Semáforo de plazos</text><text x="330" y="201" font-size="11" font-weight="400">≤3d · 4–7d · &gt;7d</text>
+     <text x="100" y="276">Telegram Bot</text><text x="100" y="296" font-size="11" font-weight="400">Asistente IA</text>
+     <text x="330" y="276">n8n + Ollama</text><text x="330" y="296" font-size="11" font-weight="400">Orquestación · LLM</text>
+     <text x="560" y="276">MongoDB Atlas</text><text x="560" y="296" font-size="11" font-weight="400">Historial de chats</text></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section id="testing" class="max-w-6xl mx-auto px-4 py-16">
+ <h2 class="text-2xl md:text-3xl font-bold head">Testing y calidad de software</h2>
+ <p class="muted mt-2">Pruebas funcionales, de integración y usabilidad del flujo de punta a punta (Postman + UI).</p>
+ <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+  <div class="card p-5"><div class="text-2xl">📥</div><h3 class="font-semibold mt-2">Ingesta</h3><p class="muted text-sm mt-1">Formulario validado → API.</p><span class="badge g mt-3">Conforme</span></div>
+  <div class="card p-5"><div class="text-2xl">🚦</div><h3 class="font-semibold mt-2">Semáforo</h3><p class="muted text-sm mt-1">Cálculo determinista de plazos.</p><span class="badge g mt-3">Conforme</span></div>
+  <div class="card p-5"><div class="text-2xl">🔌</div><h3 class="font-semibold mt-2">API</h3><p class="muted text-sm mt-1">Endpoints REST con Postman.</p><span class="badge g mt-3">Conforme</span></div>
+  <div class="card p-5"><div class="text-2xl">🍃</div><h3 class="font-semibold mt-2">MongoDB</h3><p class="muted text-sm mt-1">Persistencia del historial.</p><span class="badge g mt-3">Conforme</span></div>
+ </div>
+ <div class="grid lg:grid-cols-2 gap-6 mt-8">
+  <div class="card p-6">
+   <h3 class="font-semibold head">Defectos abiertos (transparencia)</h3>
+   <ul class="mt-4 space-y-4 text-sm">
+    <li><span class="badge y">DEF-05</span> <b>Defecto de filtro.</b> <span class="muted">Falla abierta en el filtrado de expedientes; pendiente de corrección.</span></li>
+    <li><span class="badge r">OBS-SEG-01</span> <b>Seguridad CORS / tokens en chats.</b> <span class="muted">Observación de seguridad abierta sobre la configuración CORS y el manejo de tokens en los chats.</span></li>
+   </ul>
+  </div>
+  <div class="card p-6">
+   <h3 class="font-semibold head">Simulador del semáforo</h3>
+   <label for="dias" class="text-sm muted block mt-3">Días restantes para el vencimiento: <b id="dv" class="head">10</b></label>
+   <input id="dias" type="range" min="0" max="20" value="10" class="w-full mt-2 accent-sky-600">
+   <div id="sem" class="mt-4 text-center"></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer id="equipo" class="bg-[#1e3a8a] text-blue-100">
+ <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8 text-sm">
+  <div><h3 class="text-white font-bold text-lg">Instituto Superior Politécnico Córdoba (ISPC)</h3><p class="mt-2">Tecnicatura en Ciencia de Datos e Inteligencia Artificial (2026)</p><p class="mt-1">Grupo 10</p><p class="mt-1">Espacio curricular: Práctica Profesionalizante I + Testeo de Software</p></div>
+  <div><h3 class="text-white font-semibold">Integrantes</h3><ul class="mt-2 space-y-1"><li>Melchiorre Mariano</li><li>Lagger Luis</li><li>Issetta Rocío</li><li>Roqué Martín</li><li>Heredia Joel</li></ul></div>
+  <div><h3 class="text-white font-semibold">Docentes</h3><ul class="mt-2 space-y-1"><li>Dianela Accietto</li><li>Carolina Ahumada</li></ul></div>
+ </div>
+ <p class="text-center text-xs text-blue-300 pb-6">© 2026 LexTrack · Proyecto académico</p>
+</footer>
+
+<dialog id="modal" aria-label="Póster en pantalla completa">
+ <div class="relative bg-white rounded-lg" style="width:min(96vw,1040px);max-height:94vh;overflow:auto">
+  <button id="close-modal" class="sticky top-2 float-right mr-2 z-10 btn bg-[#1e3a8a] text-white !py-1.5" aria-label="Cerrar">✕ Cerrar</button>
+  <div id="modal-wrap" style="position:relative;overflow:hidden"></div>
+ </div>
+</dialog>
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 bg-slate-900 text-white text-sm px-4 py-2 rounded-lg hidden">El enlace del bot de Telegram aún no está configurado.</div>
+
+<template id="poster-tpl">
+ <div class="poster">
+  <div class="ph"><h1>LexTrack</h1><p>Sistema de Ingesta, Gestión Jurídica y Prevención de Caducidades Procesales</p></div>
+  <div class="pg">
+   <div class="pcol">
+    <div class="pb"><b class="l">Tipo de proyecto</b>Proyecto Integrador - ABP (MVP Beta)</div>
+    <div class="pb"><b class="l">Espacio curricular</b>Práctica Profesionalizante I + Testeo de Software</div>
+    <div class="pb"><b class="l">Ejes conceptuales</b><ul><li>Arquitectura Cloud (React + FastAPI)</li><li>Persistencia Híbrida (Sheets + MongoDB)</li><li>IA Generativa (Telegram + n8n + Ollama)</li><li>Testing Integral & Semáforo de Plazos</li></ul></div>
+   </div>
+   <div class="pb"><b class="l">Problemática | Necesidad | Caso</b><span data-f="prob"></span></div>
+   <div class="pb"><b class="l">Objetivo general</b><span data-f="og"></span><b class="l" style="margin-top:10px">Objetivos específicos</b><ul data-f="oe"></ul></div>
+  </div>
+  <div class="pw"><div class="pb"><b class="l">Fundamentación | Hipótesis</b><span data-f="fund"></span></div></div>
+  <div class="pg" style="grid-template-columns:1fr 1fr">
+   <div class="pb"><b class="l">Acciones | Recursos | Tiempo</b><ul><li>Relevamiento de Pain Points y matriz de trazabilidad</li><li>Arquitectura Cloud desacoplada</li><li>Semáforo algorítmico y formulario validado</li><li>Integración Telegram + n8n + Ollama + MongoDB Atlas</li><li>Pruebas de integración y usabilidad</li></ul><p style="margin-top:6px"><b>Tiempo:</b> 2.º semestre 2026 (14 semanas)</p></div>
+   <div class="pb"><b class="l">Producto final | Conclusiones</b><span data-f="prod"></span></div>
+  </div>
+  <div class="pf"><div><b>INTEGRANTES:</b><br>Melchiorre, Lagger, Issetta, Roqué, Heredia<br><b>DOCENTE:</b> Accietto / Ahumada</div><div><b>TECNICATURA:</b> Ciencia de Datos e IA<br><b>COHORTE:</b> 2026 · Grupo 10 (Los Testers)</div></div>
+ </div>
+</template>
+
+<script>
+const D={
+ "Problemática":"<p>Gestión analógica y fragmentada de expedientes en cuadernos y WhatsApp en estudios jurídicos boutique.</p><p class='mt-2'>Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias comerciales (Pain Points PP1 a PP5).</p>",
+ "Objetivos":"<p><b>General:</b> desarrollar una plataforma Web SaaS de costo cero para digitalizar la ingesta de casos, prevenir vencimientos con un semáforo y gestionar el historial con un asistente de IA.</p><ol class='list-decimal pl-5 mt-2 space-y-1'><li>Digitalizar la ingesta en una SPA (React) conectada a una API (FastAPI).</li><li>Implementar el semáforo determinista (≤3d rojo, 4–7d amarillo, &gt;7d verde).</li><li>Integrar un asistente en Telegram con n8n, Ollama y MongoDB.</li><li>Ejecutar pruebas funcionales, de integración y usabilidad.</li></ol>",
+ "Fundamentación":"<p>Es posible modernizar la gestión judicial de un estudio boutique sin costos de licencias ni infraestructura paga, usando capas gratuitas en la nube (Vercel, Render), Google Sheets como almacenamiento inicial y modelos de IA de código abierto.</p><p class='mt-2'>Elimina el riesgo de mala praxis por caducidad, estandariza la entrada de datos y preserva la privacidad de la información legal.</p>",
+ "Producto final":"<p>Plataforma Web Cloud «LexTrack» en producción: SPA React (Vercel), API REST FastAPI (Render) y bot de Telegram con n8n + Ollama.</p><p class='mt-2'>Se validó el recorrido formulario → API → visualización, con costo cero de infraestructura.</p>",
+ "Integrantes":"<ul class='space-y-1'><li>Melchiorre, Mariano Sebastián</li><li>Lagger, Luis Alberto</li><li>Issetta, Rocío Belén</li><li>Roqué, Martín Miguel</li><li>Heredia, Joel Augusto</li></ul><p class='mt-3 muted'>Docentes: Dianela Accietto / Carolina Ahumada · Grupo 10</p>"};
+const $=s=>document.querySelector(s);
+const TELEGRAM_URL=""; // pegar aquí el enlace del bot (https://t.me/...)
+const tg=$('#tg');
+if(TELEGRAM_URL){tg.href=TELEGRAM_URL}else{tg.addEventListener('click',e=>{e.preventDefault();const t=$('#toast');t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2500)})}
+
+// Tabs
+const tabs=$('#tabs'),panel=$('#panel');
+Object.keys(D).forEach((k,i)=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=k;b.setAttribute('aria-selected',i===0);b.onclick=()=>sel(k);tabs.appendChild(b)});
+function sel(k){[...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===k));panel.innerHTML=D[k]}
+sel('Problemática');
+
+// Poster (misma plantilla en tarjeta y modal)
+function build(wrap){
+ const p=$('#poster-tpl').content.firstElementChild.cloneNode(true);
+ p.querySelector('[data-f=prob]').textContent="Gestión analógica y fragmentada de expedientes procesales en cuadernos y WhatsApp. Alto riesgo legal por caducidad de plazos fatales y falta de presupuesto para licencias (PP1 a PP5).";
+ p.querySelector('[data-f=og]').textContent="Plataforma Web SaaS de costo cero para digitalizar la ingesta, prevenir vencimientos con un semáforo y gestionar el historial con un asistente de IA.";
+ p.querySelector('[data-f=oe]').innerHTML="<li>SPA React + API FastAPI</li><li>Semáforo (≤3d rojo, 4-7d amarillo, &gt;7d verde)</li><li>Asistente Telegram + n8n + Ollama + MongoDB</li><li>Pruebas funcionales, integración y usabilidad</li>";
+ p.querySelector('[data-f=fund]').textContent="Es posible modernizar la gestión judicial de un estudio boutique sin licencias ni infraestructura paga, con capas gratuitas en la nube (Vercel, Render), Google Sheets y modelos de IA de código abierto, eliminando el riesgo de caducidad y preservando la privacidad.";
+ p.querySelector('[data-f=prod]').textContent="Plataforma Web Cloud LexTrack en producción: SPA React, API FastAPI y bot de Telegram. Migración exitosa del modelo analógico a SaaS distribuido, con costo cero y prevención efectiva de caducidades.";
+ wrap.innerHTML='';wrap.appendChild(p);return p;
+}
+function fit(wrap){const p=wrap.firstElementChild;if(!p)return;const s=wrap.clientWidth/1000;p.style.transform=`scale(${s})`;wrap.style.height=p.offsetHeight*s+'px'}
+const pw=$('#poster-wrap'),mw=$('#modal-wrap'),modal=$('#modal');
+build(pw);fit(pw);
+$('#open-modal').onclick=()=>{build(mw);modal.showModal();fit(mw)};
+$('#close-modal').onclick=()=>modal.close();
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+addEventListener('resize',()=>{fit(pw);if(modal.open)fit(mw)});
+$('#print-poster').onclick=()=>{build(mw);modal.showModal();fit(mw);setTimeout(()=>print(),200)};
+
+// Semáforo
+const r=$('#dias');
+function upd(){const d=+r.value;$('#dv').textContent=d;const [c,t]=d<=3?['r','ROJO · Acción inmediata']:d<=7?['y','AMARILLO · Atención próxima']:['g','VERDE · En plazo'];$('#sem').innerHTML=`<span class="badge ${c}" style="font-size:1rem;padding:.5rem 1.2rem">${t}</span>`}
+r.oninput=upd;upd();
+</script>
+</body>
+</html>
